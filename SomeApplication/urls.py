@@ -5,7 +5,7 @@ from SomeApplication import views
 
 urlpatterns = patterns('',
     # ex: /SomeApplication/
-    url(r'^$', views.index, name='index'),
+    url(r'^$', views.login, name='index_login'),
 
     url(r'^login/$', views.login, name='login'),
     url(r'^login_post/$', views.login_post, name='login_post'),
@@ -15,6 +15,8 @@ urlpatterns = patterns('',
     url(r'^dashboard/(?P<person_id>\d+)/$', views.dashboard, name='dashboard'),
     url(r'^report/(?P<report_type>[\w])/(?P<person_id>\d+)/(?P<company>[\w]{3})/$', views.report, name='report'),
     url(r'^report_post/$', views.report_post, name='report_post'),
+    url(r'^forgot_password/$', views.forgot_password, name='forgot_password'),
+    url(r'^forgot_password_post/$', views.forgot_password_post, name='forgot_password_post'),
     # ex: /SomeApplication/5/results/
     #url(r'^(?P<company_id>\d+)/results/$', views.results, name='results'),
     # ex: /SomeApplication/5/vote/

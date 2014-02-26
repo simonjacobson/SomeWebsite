@@ -60,7 +60,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', #'django.db.backends.mysql',#  'mysql.connector.django',
         'NAME': 'some_website',
         'USER': 'postgres',
-        'PASSWORD': 'password',
+        'PASSWORD': 'somenewpassword',
         'HOST': '',
         'PORT': ''
     }
@@ -89,3 +89,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     '/home/vps/django_projects/SomeWebsite/static/',
 )
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'spam@killbotlogic.com'
+EMAIL_HOST_PASSWORD = 'Password99!'

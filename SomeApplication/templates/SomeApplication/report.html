@@ -2,6 +2,11 @@
     {% csrf_token %}
     <div>
         <fieldset class="module aligned ">
+            <div class="form-row">
+                <div>
+                    <h1>Incident report</h1>
+                </div>
+            </div>
             <div class="form-row field-incident_number">
                 <div>
                     <label class="required" for="id_incident_number">Incident number:</label>
@@ -18,7 +23,9 @@
             <div class="form-row field-note">
                 <div>
                     <label class="required" for="id_note">Note:</label>
-                    <input class="vTextField" id="id_note" maxlength="3200" name="note" type="text"/>
+                    <textarea id="id_note" name="note">
+
+                    </textarea>
                 </div>
             </div>
             <div class="form-row field-cost">
@@ -54,53 +61,55 @@
             <div class="form-row field-risk_category">
                 <div>
                     <label class="required" for="id_risk_category">Risk category:</label>
-                    <input class="vTextField" id="id_risk_category" maxlength="250" name="risk_category" type="text"/>
+                    <input class="vTextField" id="id_risk_category" maxlength="250" name="risk_category" type="text" value="{{ report_type }}" />
                 </div>
             </div>
             <div class="form-row field-kri_category">
                 <div>
                     <label class="required" for="id_kri_category">Kri category:</label>
-                    <input class="vTextField" id="id_kri_category" maxlength="250" name="kri_category" type="text"/>
-                </div>
-            </div>
-
-
-
-
-            <div class="form-row field-email_address">
-                <div>
-                    <label class="required" for="id_email_address">Email address:</label>
-                    <input class="vTextField" id="id_email_address" maxlength="250" name="email_address" type="text"/>
+                    <input class="vTextField" id="id_kri_category" maxlength="250" name="kri_category" type="text" value="{{ report_type }}" />
                 </div>
             </div>
             <div class="form-row field-company">
                 <div>
                     <label class="required" for="id_company">Company:</label>
-                    <input class="vTextField" id="id_company" maxlength="3" name="company" type="text"/>
+                    <input class="vTextField" id="id_company" maxlength="3" name="company" type="text" value="{{ company }}" />
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <h1>Reporters details</h1>
+                </div>
+            </div>
+            <div class="form-row field-email_address">
+                <div>
+                    <label class="required" for="id_email_address">Email address:</label>
+                    <input class="vTextField" id="id_email_address" maxlength="250" name="email_address" type="text" vlaue="{{ p.email }} "/>
                 </div>
             </div>
             <div class="form-row field-business_unit">
                 <div>
                     <label class="required" for="id_business_unit">Business unit:</label>
-                    <input class="vTextField" id="id_business_unit" maxlength="250" name="business_unit" type="text"/>
+                    <input class="vTextField" id="id_business_unit" maxlength="250" name="business_unit" type="text" value="{{ person.business_unit }}" />
                 </div>
             </div>
             <div class="form-row field-role">
                 <div>
                     <label class="required" for="id_role">Role:</label>
-                    <input class="vTextField" id="id_role" maxlength="250" name="role" type="text"/>
+                    <input class="vTextField" id="id_role" maxlength="250" name="role" type="text" value="{{ person.role }}" />
                 </div>
             </div>
             <div class="form-row field-first_name">
                 <div>
                     <label class="required" for="id_first_name">First name:</label>
-                    <input class="vTextField" id="id_first_name" maxlength="250" name="first_name" type="text"/>
+                    <input class="vTextField" id="id_first_name" maxlength="250" name="first_name" type="text" value="{{ person.first_name }}" />
                 </div>
             </div>
             <div class="form-row field-last_name">
                 <div>
                     <label class="required" for="id_last_name">Last name:</label>
-                    <input class="vTextField" id="id_last_name" maxlength="250" name="last_name" type="text" value="{{ person.id }}" />
+                    <input class="vTextField" id="id_last_name" maxlength="250" name="last_name" type="text" value="{{ person.last_name }}" />
                 </div>
             </div>
         </fieldset>
@@ -112,3 +121,10 @@
     </div>
 </form>
 
+<style>
+
+    textarea {
+        width: 500px;
+        height: 100px;
+    }
+</style>
