@@ -1,0 +1,197 @@
+- model: SomeApplication.Person
+  pk: 1
+  fields:
+    email_address: scott@gmail.com
+    company: RFD
+    business_unit: Accounting
+    role: Clerical assistant
+    first_name: Scott
+    last_name: Sebastian
+    password: password
+    timestamp: !!timestamp '2013-01-16 08:16:59.844560+00:00'
+- model: SomeApplication.Person
+  pk: 2
+  fields:
+    email_address: lillian@gmail.com
+    company: PWC
+    business_unit: Marketing
+    role: Forensic nurse
+    first_name: Lillian
+    last_name: Ralston
+    password: password
+    timestamp: !!timestamp '2013-01-16 08:16:59.844560+00:00'
+- model: SomeApplication.Person
+  pk: 3
+  fields:
+    email_address: jennifer@gmail.com
+    company: KPM
+    business_unit: Human resources
+    role: Childcare worker
+    first_name: Jennifer
+    last_name: Burmeister
+    password: password
+    timestamp: !!timestamp '2013-01-16 08:16:59.844560+00:00'
+- model: SomeApplication.Person
+  pk: 4
+  fields:
+    email_address: robert@gmail.com
+    company: BBY
+    business_unit: Research and development
+    role: Agricultural manager
+    first_name: Robert
+    last_name: Long
+    password: password
+    timestamp: !!timestamp '2013-01-16 08:16:59.844560+00:00'
+- model: SomeApplication.Person
+  pk: 5
+  fields:
+    email_address: edward@gmail.com
+    company: FMT
+    business_unit: Manufacturing
+    role: Job service consultant
+    first_name: Edward
+    last_name: Demby
+    password: password
+    timestamp: !!timestamp '2013-01-16 08:16:59.844560+00:00'
+
+#- model: SomeApplication.OptionMatrix
+- model: SomeApplication.OptionMatrix
+  pk: 1
+  fields:
+    option_a: true
+    option_b: false
+    option_c: true
+    option_d: false
+    option_e: true
+    option_f: false
+    option_g: true
+    option_h: false
+    option_i: true
+    option_j: false
+    option_k: true
+    option_l: false
+    option_m: true
+    option_n: false
+    option_o: true
+    option_p: false
+
+    person: 1
+    email_address: scott@gmail.com
+    company: RFD
+    business_unit: Accounting
+    role: Clerical assistant
+    first_name: Scott
+    last_name: Sebastian
+    timestamp: !!timestamp '2013-01-16 08:16:59.844560+00:00'
+- model: SomeApplication.OptionMatrix
+  pk: 2
+  fields:
+    option_a: true
+    option_b: false
+    option_c: true
+    option_d: false
+    option_e: false
+    option_f: false
+    option_g: false
+    option_h: false
+    option_i: true
+    option_j: false
+    option_k: false
+    option_l: false
+    option_m: false
+    option_n: true
+    option_o: false
+    option_p: false
+
+    person: 1
+    email_address: scott@gmail.com
+    company: RFD
+    business_unit: Accounting
+    role: Clerical assistant
+    first_name: Scott
+    last_name: Sebastian
+    timestamp: !!timestamp '2013-01-16 08:16:59.844560+00:00'
+- model: SomeApplication.OptionMatrix
+  pk: 3
+  fields:
+    option_a: true
+    option_b: false
+    option_c: true
+    option_d: true
+    option_e: false
+    option_f: false
+    option_g: true
+    option_h: false
+    option_i: false
+    option_j: true
+    option_k: false
+    option_l: true
+    option_m: false
+    option_n: true
+    option_o: false
+    option_p: false
+
+    person: 1
+    email_address: scott@gmail.com
+    company: RFD
+    business_unit: Accounting
+    role: Clerical assistant
+    first_name: Scott
+    last_name: Sebastian
+    timestamp: !!timestamp '2013-01-16 08:16:59.844560+00:00'
+- model: SomeApplication.OptionMatrix
+  pk: 4
+  fields:
+    option_a: false
+    option_b: true
+    option_c: false
+    option_d: false
+    option_e: true
+    option_f: false
+    option_g: true
+    option_h: false
+    option_i: false
+    option_j: false
+    option_k: false
+    option_l: true
+    option_m: false
+    option_n: true
+    option_o: false
+    option_p: true
+
+    person: 1
+    email_address: scott@gmail.com
+    company: RFD
+    business_unit: Accounting
+    role: Clerical assistant
+    first_name: Scott
+    last_name: Sebastian
+    timestamp: !!timestamp '2013-01-16 08:16:59.844560+00:00'
+- model: SomeApplication.OptionMatrix
+  pk: 5
+  fields:
+    option_a: true
+    option_b: false
+    option_c: true
+    option_d: true
+    option_e: false
+    option_f: true
+    option_g: true
+    option_h: true
+    option_i: false
+    option_j: true
+    option_k: true
+    option_l: true
+    option_m: false
+    option_n: false
+    option_o: true
+    option_p: true
+
+    person: 1
+    email_address: scott@gmail.com
+    company: RFD
+    business_unit: Accounting
+    role: Clerical assistant
+    first_name: Scott
+    last_name: Sebastian
+    timestamp: !!timestamp '2013-01-16 08:16:59.844560+00:00'

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+
+{% if company_list %}
+    <ul>
+        {% for company in company_list %}
+            <li><a href="{% url 'SomeApplication:dashboard' company.id %}">{{ company.ticker }}</a></li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>You done messed up</p>
+{% endif %}
+
+
+
+
+
+
+</body>
+</html>

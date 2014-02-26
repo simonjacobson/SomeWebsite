@@ -1,0 +1,71 @@
+<h1>{{ company }}</h1>
+
+
+<style>
+    .boxes {
+
+
+    }
+    .boxes .box {
+{#        max-height: 190px;#}
+{#        height: 190px;#}
+{#        width: 24%;#}
+        float: left;
+        display: table;
+        overflow: hidden;
+
+
+{#        background: rgba(0, 174, 219, 0);#}
+    }
+    .boxes .box a {
+        margin: 0px;
+        display: table-cell;
+{#        vertical-align: middle;#}
+        text-align: center;
+{#        background: white;#}
+        text-decoration: none;
+        color: black;
+    }
+    .boxes .box a span {
+        font-size: 100px;
+
+        height: 190px;
+        width: 190px;
+        max-height: 190px;
+        max-width: 190px;
+        display: block;
+        border: thin black solid;
+    }
+
+</style>
+
+{% if boxes %}
+
+
+
+    <div class="boxes">
+
+
+
+
+            {% for key, val in boxes %}
+                {% if val %}
+                    <div class="box">
+                        <a alt="Create incident type {{ key }} form" href="">
+                            {# <img src="assets/img/logos/acs-foundation-banner.png"> #}
+                            <span>{{ key }}</span>
+                        </a>
+                    </div>
+                {% endif %}
+
+            {% endfor %}
+
+    </div>
+
+{% else %}
+    <p>You done messed up</p>
+{% endif %}
+
+
+{{ company.first_name }}
+{{ company.last_name }}

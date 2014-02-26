@@ -52,15 +52,14 @@ ROOT_URLCONF = 'SomeWebsite.urls'
 
 WSGI_APPLICATION = 'SomeWebsite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', #'django.db.backends.mysql',#  'mysql.connector.django',
         'NAME': 'some_website',
-        'USER': 'root',
+        'USER': 'postgres',
         'PASSWORD': 'password',
         'HOST': '',
         'PORT': ''
