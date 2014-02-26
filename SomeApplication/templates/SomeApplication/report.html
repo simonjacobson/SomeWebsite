@@ -1,9 +1,114 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
+<form action="{% url 'SomeApplication:report_post' %}" method="post">
+    {% csrf_token %}
+    <div>
+        <fieldset class="module aligned ">
+            <div class="form-row field-incident_number">
+                <div>
+                    <label class="required" for="id_incident_number">Incident number:</label>
+                    <input class="vTextField" id="id_incident_number" maxlength="250" name="incident_number"
+                           type="text"/>
+                </div>
+            </div>
+            <div class="form-row field-business_owner">
+                <div>
+                    <label class="required" for="id_business_owner">Business owner:</label>
+                    <input class="vTextField" id="id_business_owner" maxlength="250" name="business_owner" type="text"/>
+                </div>
+            </div>
+            <div class="form-row field-note">
+                <div>
+                    <label class="required" for="id_note">Note:</label>
+                    <input class="vTextField" id="id_note" maxlength="3200" name="note" type="text"/>
+                </div>
+            </div>
+            <div class="form-row field-cost">
+                <div>
+                    <label class="required" for="id_cost">Cost:</label>
+                    <input id="id_cost" name="cost" step="0.01" type="number"/>
+                </div>
+            </div>
+            <div class="form-row field-action">
+                <div>
+                    <label class="required" for="id_action">Action:</label>
+                    <input class="vTextField" id="id_action" maxlength="3200" name="action" type="text"/>
+                </div>
+            </div>
+            <div class="form-row field-change_reason">
+                <div>
+                    <label class="required" for="id_change_reason">Change reason:</label>
+                    <input class="vTextField" id="id_change_reason" maxlength="3200" name="change_reason" type="text"/>
+                </div>
+            </div>
+            <div class="form-row field-status">
+                <div>
+                    <label class="required" for="id_status">Status:</label>
+                    <input class="vTextField" id="id_status" maxlength="250" name="status" type="text"/>
+                </div>
+            </div>
+            <div class="form-row field-triggered">
+                <div class="checkbox-row">
+                    <input id="id_triggered" name="triggered" type="checkbox"/><label class="vCheckboxLabel"
+                                                                                      for="id_triggered">Triggered</label>
+                </div>
+            </div>
+            <div class="form-row field-risk_category">
+                <div>
+                    <label class="required" for="id_risk_category">Risk category:</label>
+                    <input class="vTextField" id="id_risk_category" maxlength="250" name="risk_category" type="text"/>
+                </div>
+            </div>
+            <div class="form-row field-kri_category">
+                <div>
+                    <label class="required" for="id_kri_category">Kri category:</label>
+                    <input class="vTextField" id="id_kri_category" maxlength="250" name="kri_category" type="text"/>
+                </div>
+            </div>
 
-</body>
-</html>
+
+
+
+            <div class="form-row field-email_address">
+                <div>
+                    <label class="required" for="id_email_address">Email address:</label>
+                    <input class="vTextField" id="id_email_address" maxlength="250" name="email_address" type="text"/>
+                </div>
+            </div>
+            <div class="form-row field-company">
+                <div>
+                    <label class="required" for="id_company">Company:</label>
+                    <input class="vTextField" id="id_company" maxlength="3" name="company" type="text"/>
+                </div>
+            </div>
+            <div class="form-row field-business_unit">
+                <div>
+                    <label class="required" for="id_business_unit">Business unit:</label>
+                    <input class="vTextField" id="id_business_unit" maxlength="250" name="business_unit" type="text"/>
+                </div>
+            </div>
+            <div class="form-row field-role">
+                <div>
+                    <label class="required" for="id_role">Role:</label>
+                    <input class="vTextField" id="id_role" maxlength="250" name="role" type="text"/>
+                </div>
+            </div>
+            <div class="form-row field-first_name">
+                <div>
+                    <label class="required" for="id_first_name">First name:</label>
+                    <input class="vTextField" id="id_first_name" maxlength="250" name="first_name" type="text"/>
+                </div>
+            </div>
+            <div class="form-row field-last_name">
+                <div>
+                    <label class="required" for="id_last_name">Last name:</label>
+                    <input class="vTextField" id="id_last_name" maxlength="250" name="last_name" type="text" value="{{ person.id }}" />
+                </div>
+            </div>
+        </fieldset>
+        <div class="submit-row">
+            <input type="submit" value="Save" class="default" name="_save"/>
+            <input type="hidden" name="person" id="id_person" value="{{ person.id }}" />
+        </div>
+        <script type="text/javascript">document.getElementById("id_incident_number").focus();</script>
+    </div>
+</form>
+

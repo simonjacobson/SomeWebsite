@@ -1,58 +1,78 @@
-<h1>{{ company }}</h1>
+<h1>{{ person }}'s dashboard</h1>
 
 
 <style>
-    .boxes {
+    .dashboard-header {
 
 
     }
-    .boxes .box {
-{#        max-height: 190px;#}
-{#        height: 190px;#}
-{#        width: 24%;#}
-        float: left;
+    .dashboard {
         display: table;
-        overflow: hidden;
 
-
-{#        background: rgba(0, 174, 219, 0);#}
     }
-    .boxes .box a {
-        margin: 0px;
+
+    .dashboard .row {
+        text-wrap: none;
+
+        display: table-row;
+    }
+    .dashboard .row .box {
         display: table-cell;
-{#        vertical-align: middle;#}
+        overflow: hidden;
+        padding: 4px;
+    }
+    .dashboard .row .box a {
+        height: 70px;
+        width: 70px;
+
+
+        display: block;
+        border: thin black solid;
+
         text-align: center;
-{#        background: white;#}
         text-decoration: none;
         color: black;
     }
-    .boxes .box a span {
-        font-size: 100px;
+    .dashboard .row .box.disabled a {
+        color: gainsboro;
+    }
+    .dashboard .row .box.disabled a:hover {
+        cursor: default;
+    }
+    .dashboard .row .box a span {
+        font-size: 50px;
 
-        height: 190px;
-        width: 190px;
-        max-height: 190px;
-        max-width: 190px;
-        display: block;
-        border: thin black solid;
+
     }
 
 </style>
 
-{% if boxes %}
+ <div class="dashboard-header">
+        <div class="info">
+            Info
+        </div>
+        <div>
+            Report type
+        </div>
+    </div>
+<div class="dashboard">
 
-
-
-    <div class="boxes">
-
-
-
-
-            {% for key, val in boxes %}
+    {% for x in companies %}
+        <div class="row">
+            <div class="info">
+                Launch report for
+                {{ x.company }}
+            </div>
+            {% for key, val in x.boxes %}
                 {% if val %}
                     <div class="box">
+                        <a alt="Create incident type {{ key }} form" href="{% url 'SomeApplication:report' key x.person_id x.company %}">
+                            <span>{{ key }}</span>
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="box disabled">
                         <a alt="Create incident type {{ key }} form" href="">
-                            {# <img src="assets/img/logos/acs-foundation-banner.png"> #}
                             <span>{{ key }}</span>
                         </a>
                     </div>
@@ -60,12 +80,6 @@
 
             {% endfor %}
 
-    </div>
-
-{% else %}
-    <p>You done messed up</p>
-{% endif %}
-
-
-{{ company.first_name }}
-{{ company.last_name }}
+        </div>
+    {% endfor %}
+</div>
