@@ -1,0 +1,24 @@
+<form action="{% url 'SomeApplication:report_post' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_ul }}
+    <div class="timestamp">
+        {% load timetags %}
+        Time of creation: {{ timestamp|print_timestamp }}
+
+    </div>
+
+    <br />
+    <input type="submit" value="Submit" />
+
+
+</form>
+
+<style>
+    .timestamp {
+        top: 0;
+        position: absolute;
+        right: 0;
+        padding-right: 40px;
+        padding-top: 40px;
+    }
+</style>

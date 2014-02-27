@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate
 from django.core.urlresolvers import reverse
 from django.contrib import messages
 from django.core.mail import send_mail
+import time
 
 def index(request):
     company_list = OptionMatrix.objects.order_by('-company')[:5]
@@ -61,8 +62,8 @@ def login(request):
 
 
 def login_post(request):
-    email = request.POST['user']
-    password = request.POST['pass']
+    email = request.POST['user'].strip()
+    password = request.POST['pass'].strip()
 
     p = Person.objects.filter(email_address=email).first()
 
@@ -75,14 +76,29 @@ def login_post(request):
 
 def report(request, report_type, person_id, company):
     p = Person.objects.filter(id=person_id).first()
-    return render(request, 'SomeApplication/report.html', {'report_type': report_type, 'person': p, 'company': company})
-
+    #return render(request, 'SomeApplication/report.html', {'report_type': report_type, 'person': p, 'company': company})
+    form = IncidentForm(initial={'risk_category': report_type,
+                                 'kri_category': report_type,
+                                 'person_id': person_id,
+                                 'email_address': p.email_address,
+                                 'business_unit': p.business_unit,
+                                 'role': p.role,
+                                 'first_name': p.first_name,
+                                 'last_name': p.last_name,
+                                 'company': company
+    })
+    return render(request, 'SomeApplication/report_form.html', {
+        'form': form,
+        'timestamp': time.time()
+    })
 
 def report_post(request):
     pass
 
+
 def forgot_password(request):
     return render(request, 'SomeApplication/forgot_password.html', {})
+
 
 def forgot_password_post(request):
     email = request.POST['email']
@@ -94,11 +110,32 @@ def forgot_password_post(request):
               [email, 'me@killbotlogic.com'],
               fail_silently=False)
 
-    messages.add_message(request, messages.constants.INFO, 'Your password has been sent to your email')
+    messages.add_message(request, messages.constants.INFO, 'Your password has been sent to {}'.format(email))
     return HttpResponseRedirect(reverse('SomeApplication:login'))
 
 
+from django import forms
 
 
+class IncidentForm(forms.ModelForm):
 
+    person_id = forms.IntegerField(widget=forms.HiddenInput())
 
+    class Meta:
+        model = Incident
+        fields = ['incident_number',
+                  'business_owner',
+                  'note',
+                  'cost',
+                  'action',
+                  'change_reason',
+                  'status',
+                  'triggered',
+                  'risk_category',
+                  'kri_category',
+                  'email_address',
+                  'company',
+                  'business_unit',
+                  'role',
+                  'first_name',
+                  'last_name']

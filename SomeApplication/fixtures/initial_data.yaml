@@ -77,7 +77,7 @@
 
     person: 1
     email_address: scott@gmail.com
-    company: RFD
+    company: BFG
     business_unit: Accounting
     role: Clerical assistant
     first_name: Scott
@@ -105,7 +105,7 @@
 
     person: 1
     email_address: scott@gmail.com
-    company: RFD
+    company: DRE
     business_unit: Accounting
     role: Clerical assistant
     first_name: Scott
@@ -133,7 +133,7 @@
 
     person: 1
     email_address: scott@gmail.com
-    company: RFD
+    company: JAK
     business_unit: Accounting
     role: Clerical assistant
     first_name: Scott
@@ -161,7 +161,7 @@
 
     person: 1
     email_address: scott@gmail.com
-    company: RFD
+    company: BAR
     business_unit: Accounting
     role: Clerical assistant
     first_name: Scott
@@ -189,7 +189,7 @@
 
     person: 1
     email_address: scott@gmail.com
-    company: RFD
+    company: XFL
     business_unit: Accounting
     role: Clerical assistant
     first_name: Scott

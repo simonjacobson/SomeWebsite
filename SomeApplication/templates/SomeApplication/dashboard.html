@@ -44,17 +44,31 @@
 
 
     }
+    textarea {
+
+        right: 0;
+        top: 0;
+        width: 500px;
+        height: 500px;
+        position: absolute;
+    }
 
 </style>
 
  <div class="dashboard-header">
-        <div class="info">
-            Info
-        </div>
-        <div>
-            Report type
-        </div>
+     <div class="buttons">
+         <input type="button" value="Previous" />
+         <input type="button" value="Next" />
+
+
+     </div>
+    <div class="info">
+        Info
     </div>
+    <div>
+        Report type
+    </div>
+</div>
 <div class="dashboard">
 
     {% for x in companies %}
@@ -71,11 +85,12 @@
                         </a>
                     </div>
                 {% else %}
-                    <div class="box disabled">
-                        <a alt="Create incident type {{ key }} form" href="">
-                            <span>{{ key }}</span>
-                        </a>
-                    </div>
+
+{#                    <div class="box disabled">#}
+{#                        <a alt="Create incident type {{ key }} form" href="">#}
+{#                            <span>{{ key }}</span>#}
+{#                        </a>#}
+{#                    </div>#}
                 {% endif %}
 
             {% endfor %}
@@ -83,3 +98,6 @@
         </div>
     {% endfor %}
 </div>
+<textarea>
+    put some mystery content here
+</textarea>
